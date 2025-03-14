@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 140 20% 99%;
+    --foreground: 142 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 142 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 142 30% 10%;
+
+    --primary: 142 47% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 10% 96%;
+    --secondary-foreground: 142 47% 40%;
+
+    --muted: 142 10% 96%;
+    --muted-foreground: 142 10% 40%;
+
+    --accent: 142 10% 96%;
+    --accent-foreground: 142 47% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 142 20% 88%;
+    --input: 142 20% 88%;
+    --ring: 142 47% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-foreground mb-2 tracking-tight;
+  }
+  
+  .section-subtitle {
+    @apply text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto;
+  }
+  
+  .section-container {
+    @apply py-16 md:py-24 px-4 md:px-6 max-w-7xl mx-auto overflow-hidden;
+  }
+  
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-sm rounded-2xl shadow-sm border border-white/80;
+  }
+  
+  .hover-card-animation {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-therapist-200 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-therapist-300;
+}
